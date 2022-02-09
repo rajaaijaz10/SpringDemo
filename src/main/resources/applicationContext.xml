@@ -1,0 +1,39 @@
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="setting" class="com.costaff.Setting">
+        <constructor-arg value="1"></constructor-arg>
+        <constructor-arg value="Aijaz"></constructor-arg>
+    </bean>
+    <bean id="answer1" class="com.costaff.Answers">
+        <constructor-arg value="Answer 1 --some answer"></constructor-arg>
+    </bean>
+
+    <bean id="answer2" class="com.costaff.Answers">
+        <constructor-arg value="Answer 2 --some answer"></constructor-arg>
+    </bean>
+    <bean id="question" class="com.costaff.Questions">
+        <constructor-arg value="101"></constructor-arg>
+        <constructor-arg value="Some Question"></constructor-arg>
+        <constructor-arg ref="setting"></constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>This is simple string list object 1</value>
+                <value>This is simple string list object 2</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <ref bean="answer1"/>
+                <ref bean="answer2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
