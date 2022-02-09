@@ -35,5 +35,39 @@
             </list>
         </constructor-arg>
     </bean>
+    <bean id="address1" class="com.costaff.employees.Address">
+        <constructor-arg value="201"/>
+        <constructor-arg value="Srinagar"/>
+        <constructor-arg value="190001"/>
+    </bean>
+    <bean id="address2" class="com.costaff.employees.Address">
+        <constructor-arg value="202"/>
+        <constructor-arg value="Ganderbal"/>
+        <constructor-arg value="190201"/>
+    </bean>
+    <bean id="employee1" class="com.costaff.employees.Employee">
+        <constructor-arg value="301"/>
+        <constructor-arg value="Aijaz"/>
+        <constructor-arg value="30000"/>
+        <constructor-arg ref="address1"/>
+        <constructor-arg value="401"/>
+    </bean>
+    <bean id="employee2" class="com.costaff.employees.Employee">
+        <constructor-arg value="302"/>
+        <constructor-arg value="Sajid"/>
+        <constructor-arg value="35000"/>
+        <constructor-arg ref="address2"/>
+        <constructor-arg value="401"/>
+    </bean>
+    <bean id="department1" class="com.costaff.employees.Department">
+        <constructor-arg value="401"/>
+        <constructor-arg value="Development"/>
+        <constructor-arg>
+            <list>
+                <ref bean="employee1"/>
+                <ref bean="employee2"/>
+            </list>
+        </constructor-arg>
+    </bean>
 
 </beans>
